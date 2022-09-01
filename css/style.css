@@ -16,22 +16,23 @@ header {
     box-shadow: 10px 0 10px grey;
 }
 
-h1 {
+h1 { /* título BuzzQuizz */
     color: white;
     font-size: 37px;
     font-weight: 700;
 }
 
-main {
+.screen1 {
     width: 100%;
     height: 100%;
     background-color: white;
     display: flex;
     justify-content: center;
     padding-top: 69px;
+    z-index: 0;
 }
 
-.yourQuiz {
+.your-quizz {
     width: 1051px;
     height: 181px;
     border: 2px dashed #B9B9B9;
@@ -43,14 +44,14 @@ main {
     align-items: center;
 }
 
-.yourQuiz > p {
+.your-quizz > p {
     color: #B9B9B9;
     font-size: 20px;
     font-weight: 400;
     text-align: center;
 }
 
-.createQuiz {
+.create-quizz { /* botão Criar Quizz */
     width: 136px;
     height: 40px;
     border: 2px dashed #EC362D;
@@ -60,9 +61,97 @@ main {
     align-items: center;
 }
 
-.createQuiz > p {
+.create-quizz > p {
     color: #EC362D;
     font-size: 21px;
     font-weight: 400;
     text-align: center;
+}
+
+.screen3A { /* tela info básicas */
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 70px;
+    z-index: 1;
+}
+
+.screen3B { /* tela perguntas */
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 70px;
+    z-index: 1;
+}
+
+h2 {
+    color: black;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.fields {
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: pink;
+}
+
+.fields input{
+    width: 564px;
+    height: 46px;
+    padding-left: 23px;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.fields > input::placeholder{
+    color: #BABABA;
+}
+
+.red-button {
+    height: 54px;
+    padding: 0 45px;
+    background-color: #EC362D;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red-button > p {
+    color: white;
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.show-screen{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 110px) {
+    
 }
