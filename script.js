@@ -1,4 +1,4 @@
-let allQuizzes = [];
+let allquizzes = [];
 
 
 function createQuizz() { // Ao clicar em criar quizz, a tela 3A (info basicas) será apresentada
@@ -7,35 +7,36 @@ function createQuizz() { // Ao clicar em criar quizz, a tela 3A (info basicas) s
     screen3.classList.add('show-screen');
 }
 
-function carregarquizz(resposta){
-    allQuizzes = resposta.data;
-    renderizarQuizz(allQuizzes);
+getquizzes();
+
+function getquizzes(){
+
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
+    promise.then( dadosquizz );
 }
 
-const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes")
-promise.then(carregarquizz);
+function dadosquizz(resposta){
 
-renderizarQuizz(allQuizzes)
+    allquizzes = resposta.data
 
-
-function renderizarQuizz(allQuizzes){
-
-    const quizz = document.querySelector('.test');
-    
-    quizz.innerHTML = ""
-
-    let teste;
-
-
-   quizz.innerHTML = `
-   <li class="rectangle">
-   <p class="tittle-quizz">${allQuizzes[].title}</p>
-</li>
-<li class="rectangle">
-<p class="tittle-quizz">${allQuizzes[2].title}</p>
-</li>  
-<li class="rectangle">
-<p class="tittle-quizz">${allQuizzes[1].title}</p>
-</li>             
-                `
+    colocarQuizz();
 }
+
+function colocarQuizz(){
+
+    const ul = document.querySelector('.test');
+
+    ul.innerHTML = '';
+
+    for(let i = 0; i < allquizzes.length; i++){
+
+        ul.innerHTML = ul.innerHTML + `
+        <li class="rectangle">
+                    <p class="tittle-quizz">${allquizzes[i].title}</p>
+                    </li> 
+        `;
+    }
+
+}
+
+colocarQuizz()
