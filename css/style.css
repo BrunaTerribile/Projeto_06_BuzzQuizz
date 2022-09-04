@@ -127,13 +127,11 @@ h2 {
     height: 54px;
     padding: 0 45px;
     background-color: #EC362D;
+    border: none;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.red-button > p {
     color: white;
     font-size: 21px;
     font-weight: 400;
