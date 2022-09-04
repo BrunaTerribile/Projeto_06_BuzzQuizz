@@ -27,6 +27,8 @@ h1 { /* título BuzzQuizz */
     height: 100%;
     background-color: white;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding-top: 69px;
     z-index: 0;
@@ -143,6 +145,48 @@ h2 {
 }
 
 
+.all-quizz{
+    background: rgb(30, 187, 114);
+    width: 1051px;
+    height: 100%;
+    margin-top: 77px;
+}
+
+.all-quizz h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.all-quizz ul{
+    background: rgb(162, 172, 34);
+    width: 1051px;
+    height: 100%;
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.rectangle{
+    background: rgb(85, 16, 12);
+    width: 340px;
+    height: 181px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%)
+}
+
+.rectangle .tittle-quizz{
+    background: chartreuse;
+    margin-top: 120px;
+    margin-left: 16px;
+    margin-right: 21px;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    word-wrap: break-word;
+}
 
 
 
