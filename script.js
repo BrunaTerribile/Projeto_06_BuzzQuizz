@@ -64,3 +64,5 @@ function colocarQuizz(){ //Insere os quizzes na tela do usuário
 }
 
 colocarQuizz()
+
+//aaaaaaaaaaa
