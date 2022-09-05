@@ -232,6 +232,13 @@ sendCreatedQuizz();
 
 // Parte de Exibição dos Quizzes:
 
+myQuizzes();
+
+function myQuizzes(){ //Exibe os quizzes criados pelo usuário
+
+}
+
+
 getquizzes();
 
 function getquizzes(){ //Faz a requisição de todos os quizzes existentes para o servidor
@@ -260,6 +267,14 @@ function dadosQuizz(resposta){ //Insere os quizzes na tela do usuário
 
 }
 
+
+
+
+
+
+
+// Parte de exibição de um ÚNICO quizz escolhido pelo usuário
+
 function getThisQuizz(thisQuizz){ //Busca somente o quizz escolhido pelo usuário
     console.log(thisQuizz);
     
@@ -280,10 +295,7 @@ function showSelectedQuizz(resposta){
     const screen2 = document.querySelector('.screen2A');
     screen2.classList.add('show-screen'); // Apresenta a tela do quizz (tela 2)
 
-    let run = document.querySelector('.runQuizz'); // acessa o elemento no dom
-    
-    run.innerHTML = '';
-    
+    const run = document.querySelector('.runQuizz'); // acessa o elemento no dom
     run.innerHTML = `<div class="banner">
                         <img src="${selectedQuizz.image}" />
                         <p> ${selectedQuizz.title} </p>

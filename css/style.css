@@ -20,10 +20,9 @@ h1 { /* título BuzzQuizz */
     color: white;
     font-size: 37px;
     font-weight: 700;
-    margin: auto;
 }
 
-.screen1 {
+.screen1 { /* tela principal */
     width: 100%;
     height: 100%;
     background-color: white;
@@ -34,7 +33,6 @@ h1 { /* título BuzzQuizz */
     padding-top: 69px;
     z-index: 0;
     position: relative;
-    margin: auto;
 }
 
 .your-quizz {
@@ -79,9 +77,6 @@ h1 { /* título BuzzQuizz */
     height: 100%;
     background-color: lightblue;
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding-top: 69px;
     z-index: 3; 
     position: absolute;
@@ -89,10 +84,14 @@ h1 { /* título BuzzQuizz */
     left: 0;
 }
 
+.screen2A .runQuizz {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .banner {
-    width: 100%;
-    height: 227px;
-    z-index: 3;
+    z-index: 4;
 }
 
 .banner > img {
@@ -112,7 +111,7 @@ h1 { /* título BuzzQuizz */
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    z-index: 3;
+    z-index: 4;
 }
 
 .question {
@@ -353,5 +352,7 @@ li .tittle-quizz{
 }
 
 @media (max-width: 110px) {
-    
+    h1, .screen1 {
+        margin: auto;
+    }
 }
