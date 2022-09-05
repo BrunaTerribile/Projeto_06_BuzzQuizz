@@ -85,7 +85,7 @@ let newQuizz = {
 // Parte de Criação de um Quizz:
 
 function createQuizz() { // Ao clicar em criar quizz, a tela 3A (info basicas) será apresentada
-    alert('Oi');
+    
     const screen3 = document.querySelector('.screen3A');
     screen3.classList.add('show-screen');
    
@@ -105,26 +105,24 @@ function continueQuestions(){ //Ao clicar em prosseguir para criar perguntas, a 
     //nPerguntas = document.getElementsByName("n_perguntas_quizz");
     //nNiveis = document.getElementsByName("n_niveis_quizz");
     
-    alert('oioi');
     const screen3 = document.querySelector('.screen3B');
     screen3.classList.add('show-screen');
 }
 
 function continueLevels() { // Ao clicar em prosseguir níveis, a tela 3C (níveis) será apresentada
-    alert('deu certo');
+    
     const screen3C = document.querySelector('.screen3C');
     screen3C.classList.add('show-screen');
 }
 
 function continueSucess() { // Ao clicar em prosseguir níveis, a tela 3D (sucesso) será apresentada
-    alert('deu certo');
+    
     const screen3D = document.querySelector('.screen3D');
     screen3D.classList.add('show-screen');
 }
 
 function finishQuizz() { // Ao clicar em finalizar, os dados do quizz serão enviados ao servidor 
-    alert('finalizando');
-    
+        
     const criar = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', newQuizz)
 
     // caso de erro = chamar função falha()
