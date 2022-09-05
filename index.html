@@ -32,16 +32,18 @@
 
 
     <div class="screen2A"></div> <!--Tela 2A-Página de um quizz (perguntas)-->
+        <div class="runQuizz">
 
+        </div>
     <div class="screen2B"></div> <!--Tela 2B-Página de um quizz (finalização e pontuação)-->
 
     <div class="screen3A"> <!--Criação do quizz (info básicas)-->
         <div class="title"> <h2> Comece pelo começo </h2></div>
         <div class="fields">
-            <input type="text" value="" minlength="20" maxlength="65" placeholder="Título do seu quizz">
-            <input type="url" value="" placeholder="URL da imagem do seu quizz">
-            <input type="number" value="" min="3" placeholder="Quantidade de perguntas do quizz">
-            <input type="number" value="" min="2" placeholder="Quantidade de níveis do quizz">
+            <input type="text" name="titulo_quizz" value="" minlength="20" maxlength="65" placeholder="Título do seu quizz">
+            <input type="url" name="img_banner_quizz" value="" placeholder="URL da imagem do seu quizz">
+            <input type="number" name="n_perguntas_quizz" value="" min="3" placeholder="Quantidade de perguntas do quizz">
+            <input type="number" name="n_niveis_quizz" value="" min="2" placeholder="Quantidade de níveis do quizz">
         </div>
         <input type="submit" class="red-button" value="Prosseguir para criar perguntas" onclick="continueQuestions()"> </input>
     </div>

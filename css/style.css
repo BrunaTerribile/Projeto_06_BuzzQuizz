@@ -70,6 +70,80 @@ h1 { /* título BuzzQuizz */
     text-align: center;
 }
 
+.screen2A { /* tela quizz escolhido pelo usuário */
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 69px;
+    z-index: 1; 
+}
+
+.banner {
+    width: 100%;
+    height: 227px;
+}
+
+.banner > img {
+    filter: opacity(0.6) drop-shadow(0 0 0 black);
+    width: 100%;
+    height: 227px;
+}
+
+.banner > p {
+    color: white;
+    font-size: 39px;
+    text-align: center;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.question {
+    width: 759;
+    height: 676;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 42px;
+}
+
+.asking {
+    width: 688px;
+    height: 138px;
+    background-color: blue;
+    margin-top: 28px;
+}
+
+.asking > p {
+    color: white;
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.answer {
+    display: flex;
+}
+
+.answer > img {
+    width: 330px;
+    height: 175px;
+}
+
+.answer > p {
+    font-size: 20px;
+}
+
 .screen3A { /* tela info básicas */
     width: 100%;
     height: 100%;
