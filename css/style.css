@@ -20,6 +20,7 @@ h1 { /* título BuzzQuizz */
     color: white;
     font-size: 37px;
     font-weight: 700;
+    margin: auto;
 }
 
 .screen1 {
@@ -32,6 +33,8 @@ h1 { /* título BuzzQuizz */
     justify-content: center;
     padding-top: 69px;
     z-index: 0;
+    position: relative;
+    margin: auto;
 }
 
 .your-quizz {
@@ -75,17 +78,21 @@ h1 { /* título BuzzQuizz */
     width: 100%;
     height: 100%;
     background-color: lightblue;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 69px;
-    z-index: 1; 
+    z-index: 3; 
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .banner {
     width: 100%;
     height: 227px;
+    z-index: 3;
 }
 
 .banner > img {
@@ -105,6 +112,7 @@ h1 { /* título BuzzQuizz */
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    z-index: 3;
 }
 
 .question {
@@ -154,7 +162,10 @@ h1 { /* título BuzzQuizz */
     justify-content: flex-start;
     align-items: center;
     padding-top: 70px;
-    z-index: 1;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .screen3B { /* tela perguntas */
@@ -166,7 +177,10 @@ h1 { /* título BuzzQuizz */
     justify-content: flex-start;
     align-items: center;
     padding-top: 70px;
-    z-index: 1;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .screen3C { /* tela níveis */
@@ -178,8 +192,10 @@ h1 { /* título BuzzQuizz */
     justify-content: flex-start;
     align-items: center;
     padding-top: 70px;
-    z-index: 1;
-
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .screen3D { /* tela sucesso */
@@ -191,8 +207,10 @@ h1 { /* título BuzzQuizz */
     justify-content: flex-start;
     align-items: center;
     padding-top: 70px;
-    z-index: 1;
-
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 h2 {
@@ -310,8 +328,9 @@ li .tittle-quizz{
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 20;
+    z-index: 2;
 }
+
 .image{
     box-sizing: border-box;
     width: 340px;

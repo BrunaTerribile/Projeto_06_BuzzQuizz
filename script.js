@@ -2,6 +2,7 @@
 let allQuizzes = [];
 let selectedQuizz = [];
 let arrQuestions = [];
+let arrAnswers = [];
 let levels = [];
 
 let newQuizz = {
@@ -236,10 +237,10 @@ getquizzes();
 function getquizzes(){ //Faz a requisição de todos os quizzes existentes para o servidor
 
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
-    promise.then(dadosquizz); // Caso de sucesso: chama a função que traz os dados do quizz
+    promise.then(dadosQuizz); // Caso de sucesso: chama a função que traz os dados do quizz
 }
 
-function dadosQuizz(){ //Insere os quizzes na tela do usuário
+function dadosQuizz(resposta){ //Insere os quizzes na tela do usuário
 
     allQuizzes = resposta.data //armazena os dados dos quizzes
     const ul = document.querySelector('.test');
@@ -251,17 +252,13 @@ function dadosQuizz(){ //Insere os quizzes na tela do usuário
         ul.innerHTML = ul.innerHTML + `
                 <li class="rectangle" onclick="getThisQuizz(this)" id="${allQuizzes[i].id}">
                 <div class="gradiente"></div>
-                    <img class="image" src="${allquizzes[i].image}">
-                    <p class="tittle-quizz">${allquizzes[i].title}</p>
+                    <img class="image" src="${allQuizzes[i].image}">
+                    <p class="tittle-quizz">${allQuizzes[i].title}</p>
                 </li> 
         `;
     }
 
 }
-
-colocarQuizz()
-
-
 
 function getThisQuizz(thisQuizz){ //Busca somente o quizz escolhido pelo usuário
     console.log(thisQuizz);
@@ -277,40 +274,48 @@ function getThisQuizz(thisQuizz){ //Busca somente o quizz escolhido pelo usuári
 
 function showSelectedQuizz(resposta){
     
-    selectedQuizz = resposta.data // armazena os dados do quiz escolhido
+    selectedQuizz = resposta.data; // armazena os dados do quiz escolhido
+    console.log(selectedQuizz);
 
     const screen2 = document.querySelector('.screen2A');
     screen2.classList.add('show-screen'); // Apresenta a tela do quizz (tela 2)
 
-    const run = document.querySelector('.runQuizz');
-    run.innerHTML = `
-        <div class="banner">
-                    <img src="${selectedQuizz.image}" />
-                    <p> ${selectedQuizz.title} </p>
-                    </div>
-
-        `; //insere o banner e título do quizz escolhido
+    let run = document.querySelector('.runQuizz'); // acessa o elemento no dom
     
-    arrQuestions = selectedQuizz.questions // armazena somente as perguntas do quizz escolhido
-    let arrAnswers = questions[i].answers //armazena somente as respostas de cada pergunta do quiz escolhido
+    run.innerHTML = '';
+    
+    run.innerHTML = `<div class="banner">
+                        <img src="${selectedQuizz.image}" />
+                        <p> ${selectedQuizz.title} </p>
+                    </div>`; //insere o banner e título do quizz escolhido
+    
+    arrQuestions = selectedQuizz.questions; // armazena somente as perguntas do quizz escolhido
+    console.log(arrQuestions);
 
-    run.innerHTML = run.innerHTML + `<div class="questions"> </div>;` //insere o container de perguntas abaixo do banner
-    const container = document.querySelector('.runQuizz.questions'); //acessa a div questions criada acima
+    run.innerHTML = run.innerHTML + `<div class="questions"> 
+                                        </div>;` //insere o container de perguntas abaixo do banner
 
-    for(let i = 0; i < arrQuestions.length; i++){ //percorre as perguntas e insere uma a uma na div questions
+    let container = document.querySelector('.questions'); //acessa a div questions criada acima  
+    container.innerHTML = '';
+
+    for(let i = 0; i < arrQuestions.length; i++){ //percorre as perguntas e insere, uma a uma, na div questions
+       
         container.innerHTML = container.innerHTML + `<div class="question"> 
-                                                        <div class="asking"> ${questions[i].title} </div>
-                                                    </div>`
+                                                        <div class="asking"> ${arrQuestions[i].title} </div>
+                                                    </div>`;
         
-        const ans = document.querySelector('.runQuizz.questions.question'); //acessa a div question criada no primeiro for
+        arrAnswers.push(arrQuestions[i].answers); //armazena somente as respostas de cada pergunta do quiz escolhido
+        console.log(arrAnswers);
 
-        for (j = 0; j < arrAnswers.length; j++){ //percorre as resposta e insere uma a uma abaixo da pergunta (asking)
-            ans.innerHTML = ans.innerHTML + `
-                <div class="answer">
-                    <img src="${arrAnswers[j].image}"/>
-                    <p> ${arrAnswers[j].text} </p>
-                </div>
-            `;
-            }
-    }
+        //const ans = document.querySelector('.runQuizz.questions.question'); //acessa a div question criada no primeiro for
+
+        //for (j = 0; j < arrAnswers.length; j++){ //percorre as resposta e insere uma a uma abaixo da pergunta (asking)
+            //ans.innerHTML = ans.innerHTML + `
+                //<div class="answer">
+                    //<img src="${arrAnswers[j].image}"/>
+                   // <p> ${arrAnswers[j].text} </p>
+               // </div>
+            //`;
+          //  };
+    };
 }
