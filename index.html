@@ -85,7 +85,7 @@
         </div>
 
         <div class="fields">
-            <h3> Pergunta 1 </h3>
+            <h3> Pergunta 3 </h3>
             <input type="text" value="" minlength="20" placeholder="Texto da pergunta">
             <input type="text" value="" id="hex" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" placeholder="Cor de fundo da pergunta">
             <h3> Resposta correta </h3>
@@ -102,7 +102,41 @@
             <input type="url" value="" placeholder="URL da imagem 3">
         </div>
         
-        <input type="submit" class="red-button" value="Prosseguir para criar níveis" onclick="continueLevel()"> </input>
+        <input type="submit" class="red-button" value="Prosseguir para criar níveis" onclick="continueLevels()"> </input>
+    </div>
+
+    <div class="screen3C"> <!--Criação do quizz (níveis)-->
+        <div class="title"> <h2> Agora, decida os níveis </h2></div>
+        <div class="fields">
+            <h3> Nível 1 </h3>
+            <input type="text" value="" minlength="10" placeholder="Título do nível">
+            <input type="number" value="" min="0" max="100" placeholder="% de acerto mínima">
+            <input type="url" value="" placeholder="URL da imagem do nível">
+            <input type="text" value="" minlength="30" placeholder="Descrição do nível">
+        </div>
+        <div class="fields">
+            <h3> Nível 2 </h3>
+            <input type="text" value="" minlength="10" placeholder="Título do nível">
+            <input type="number" value="" min="0" max="100" placeholder="% de acerto mínima">
+            <input type="url" value="" placeholder="URL da imagem do nível ">
+            <input type="text" value="" minlength="30" placeholder="Descrição do nível">
+        </div>
+        <div class="fields">
+            <h3> Nível 3 </h3>
+            <input type="text" value="" minlength="10" placeholder="Título do nível">
+            <input type="number" value="" min="0" max="100" placeholder="% de acerto mínima">
+            <input type="url" value="" placeholder="URL da imagem do nível ">
+            <input type="text" value="" minlength="30" placeholder="Descrição do nível">
+        </div>
+
+        <input type="submit" class="red-button" value="Finalizar Quizz" onclick="continueSucess()"> </input>
+
+        <div class="screen3D"> <!--Criação do quizz (sucesso)-->
+            <div class="title"> <h2> Seu quizz está pronto! </h2></div>
+
+            <input type="submit" class="red-button" value="Acessar Quizz"> </input>
+            <input type="submit" class="grey-button" value="Voltar para home"> </input>
+        </div>
     </div>
 
 
