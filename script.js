@@ -61,9 +61,11 @@ function colocarQuizz(){ //Insere os quizzes na tela do usuário
     for(let i = 0; i < allquizzes.length; i++){
 
         ul.innerHTML = ul.innerHTML + `
-        <li class="rectangle">
+                <li class="rectangle ">
+                <div class="gradiente"></div>
+                    <img class="image" src="${allquizzes[i].image}">
                     <p class="tittle-quizz">${allquizzes[i].title}</p>
-                    </li> 
+                </li> 
         `;
     }
 
